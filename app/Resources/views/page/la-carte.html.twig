@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block page_title 'Le mouvement - La carte' %}
+{% block page_title 'La carte En Marche !' %}
 {% block canonical_url url('page_le_mouvement_la_carte') %}
 
 {% block stylesheets %}
@@ -26,29 +26,14 @@
 
 {% block content %}
     <main class="content committees-map">
-        <header class="space--60-0 l__wrapper--slim text--center">
-            <h1 class="text--large b__nudge--bottom-small">
-                Comités à proximité
+        <header class="l__wrapper--slim text--center b__nudge--bottom-medium">
+            <h1 class="text--large">
+                La carte En Marche !
             </h1>
         </header>
         <section class="committees-map__container">
-            <aside>
-                <ul>
-                {% for committee in committees %}
-                    <li>
-                        <h3 class="text--normal b__nudge--bottom-small">{{ committee.name }}</h3>
-                        <div class="text--summary text--gray">
-                            {{ 'committee.members_count'|transchoice(committee.membersCount) }}
-                             &middot;
-                            {{ committee.cityName }}
-                        </div>
-                    </li>
-                {% endfor %}
-                </ul>
-             </aside>
-
              <article class="text--center">
-                 <div id="map">hello</div>
+                 <div id="map" style="height: 100%"></div>
              </article>
          </section>
     </main>

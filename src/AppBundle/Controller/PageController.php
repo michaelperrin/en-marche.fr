@@ -4,7 +4,6 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\Page;
 use AppBundle\Entity\Proposal;
-use AppBundle\Entity\Committee;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -117,9 +116,7 @@ class PageController extends Controller
      */
     public function mouvementCarteAction()
     {
-        return $this->render('page/la-carte.html.twig', [
-            'committees' => $this->getDoctrine()->getRepository(Committee::class)->findApprovedCommittees(),
-        ]);
+        return $this->render('page/la-carte.html.twig');
     }
 
     /**
